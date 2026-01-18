@@ -11,7 +11,7 @@ export default function AccountPage() {
         <header className="flex justify-between items-end">
           <div>
             <h1 className="text-4xl font-bold tracking-tighter">Profilo</h1>
-            <p className="text-neutral-500 text-[10px] uppercase font-bold tracking-[0.3em]">Gestione Membro</p>
+            <p className="text-neutral-500 text-[10px] uppercase font-bold tracking-[0.4em]">Gestione Membro</p>
           </div>
           <button 
             onClick={() => router.push('/')} 
@@ -21,9 +21,9 @@ export default function AccountPage() {
           </button>
         </header>
 
-        {/* Box Info Utente stile Suite Card */}
+        {/* Box Info Utente - Tag Corretti */}
         <section className="bg-neutral-900 rounded-2xl p-8 border border-neutral-800">
-          <label className="text-[10px] font-bold text-neutral-500 uppercase tracking-[0.3em] mb-2 block">Membro dal</p>
+          <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-[0.3em] mb-2 block">Membro dal</p>
           <p className="text-xl font-bold tracking-tight">Gennaio 2026</p>
         </section>
 
