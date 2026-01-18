@@ -1,34 +1,38 @@
-'use client';
-import Link from 'next/link';
+"use client";
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
+export default function HomePage() {
+  const router = useRouter();
+
   return (
-    <main className="min-h-screen bg-neutral-950 text-white flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Sfondo sfumato decorativo */}
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-neutral-800 to-transparent opacity-20"></div>
+    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 text-center">
+      
+      {/* Intestazione Luxury - Dritta, Bold e Compatta */}
+      <header className="mb-16">
+        <h1 className="text-6xl font-bold tracking-tighter mb-2">FORTE</h1>
+        <p className="text-neutral-500 text-[10px] uppercase font-bold tracking-[0.4em]">Exclusive Suites • Milano</p>
+      </header>
 
-      <div className="z-10 text-center max-w-md">
-        <h1 className="text-5xl font-bold tracking-tighter mb-2">FORTE</h1>
-        <p className="text-neutral-500 text-sm tracking-widest uppercase mb-12">
-          Exclusive Suites • Milano
-        </p>
+      {/* Pulsanti - Stessa tipografia delle Suite */}
+      <div className="w-full max-w-sm space-y-4">
+        <button 
+          onClick={() => router.push('/suite')}
+          className="w-full bg-white text-black font-bold py-5 rounded-2xl uppercase text-xs tracking-[0.3em] hover:bg-neutral-200 transition-all shadow-2xl"
+        >
+          Prenota Soggiorno
+        </button>
 
-        <div className="space-y-4">
-          <Link
-            href="/suite"
-            className="block w-full bg-white text-black font-bold py-4 px-8 rounded text-sm tracking-widest uppercase hover:bg-neutral-200 transition-colors"
-          >
-            Prenota Soggiorno
-          </Link>
-
-          <button className="block w-full border border-neutral-800 text-neutral-500 font-bold py-4 px-8 rounded text-sm tracking-widest uppercase hover:border-white hover:text-white transition-colors">
-            Area Personale
-          </button>
-        </div>
+        <button 
+          onClick={() => router.push('/login')}
+          className="w-full bg-neutral-900 text-neutral-400 font-bold py-5 rounded-2xl uppercase text-xs tracking-[0.3em] border border-neutral-800 hover:text-white hover:bg-neutral-800 transition-all"
+        >
+          Area Personale
+        </button>
       </div>
 
-      <footer className="absolute bottom-6 text-neutral-600 text-xs">
-        © 2026 FORTE Experience
+      {/* Footer */}
+      <footer className="fixed bottom-8">
+        <p className="text-neutral-700 text-[8px] uppercase tracking-widest">© 2026 Forte Experience</p>
       </footer>
     </main>
   );
